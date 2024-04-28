@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+import React from 'react';
+import './App.css'; 
+import Search from './components/Search';
+import TransactionForm from './components/TransactionForm';
+import Transactions from './components/Transaction';
+import CarTable from './components/CarTable';
+
+
+
+const App = () => {
+  
+   const onSearch = (searchTerm) => {
+    console.log('Search term:', searchTerm);
+    
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="app-header">
+       <h2> Royal Bank of Flatiron</h2>
+      </div>
+
+      <Search onSearch={onSearch}/>
+      <TransactionForm/>
+      <Transactions />
+
+      <CarTable/>
+      
+     
+      
     </div>
   );
-}
+};
 
 export default App;
+
